@@ -9,39 +9,22 @@
 
     <!-- Custom HTML head -->
     
-    <meta name="description" content="图像复原 Image Restoration
-图像复原：指的是从已知的图像中恢复原始图像的过程。
-和图像增强对比：
-图像增强：指的是通过增加图像的对比度、亮度等来改善图像的视觉效果。
-图像复原是客观地恢复原始图像，而图像增强是主观地改善图像的视觉效果。
-图像退化模型 Image Degradation Model
-图像退化模型是指图像在传输、采集、处理等过程中受到的影响。一般来说，图像退化模型可以表示为：
-𝑔(𝑥,𝑦)&#x3D;ℎ(𝑥,𝑦)∗𝑓(𝑥,𝑦)+𝜂(𝑥,𝑦)其中，𝑔(𝑥,𝑦) 为退化图像，𝑓(𝑥,𝑦) 为原始图像，ℎ(𝑥,𝑦) 为退化函数，𝜂(𝑥,𝑦) 为噪声。
-噪声模型 Noise Models
-噪声来源：
-•
-图像获取：环境条件（光照）、传感器质量
-•
-图像传输：无线信号被干扰
-刻画噪声：
-•
-空间域和频率域特点
-‣
-白噪声：傅里叶变换后为常数
-•
-噪声是否和图像内容相关
-噪声的概率密度函数
-•
-高斯噪声：
-𝑝(𝑧)&#x3D;1√2𝜋𝜎𝑒−(𝑧−̄𝑧)22𝜎2‣
-电路噪声，传感器噪声
-‣
-期望值 𝐸(𝑧)&#x3D;̄𝑧，标准差 𝜎
-‣
-去除：均值滤波、几何均值滤波
-灰度级 𝑧
-𝑝(𝑧)
-图 1 高斯噪声概率密度函数•
+    <meta name="description" content="排序
+冒泡排序
+算法描述
+冒泡排序是一种简单的排序算法。它重复地遍历要排序的列表，一次比较两个元素，如果它们的顺序错误就把它们交换过来。遍历列表的工作是重复地进行直到没有再需要交换，也就是说该列表已经排序完成。这个算法的名字由来是因为越小的元素会经由交换慢慢“浮”到数列的顶端。
+算法实现
+void BubbleSort(Elem R[], int n) {
+    i &#x3D; n;
+    while (i &gt; 1) {
+        lastExchangeIndex &#x3D; 1;
+        for (j &#x3D; 1; j &lt; i; j++)
+            if (R[j + 1].key &lt; R[j].key) {
+                Swap(R[j], R[j + 1]);
+                lastExchangeIndex &#x3D; j;// 记下进行交换的记录位置
+            }// if
+        i &#x3D; lastExchangeIndex;// 本趟进行过交换的
+                              // 最后一个记录的位置
 ">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#ffffff" />
@@ -182,7 +165,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="/shiroa-page/main.html">Hello, shiroa</a></li><li class="chapter-item expanded affix "><a href="/shiroa-page/content/24spring.html">2024 春季学期</a></li><li class="chapter-item expanded affix "><li class="part-title">数字图像处理 | DIP</li><li class="chapter-item expanded "><a href="/shiroa-page/content/DIP/chapters/1导论.html"><strong aria-hidden="true">1.</strong> 导论</a></li><li class="chapter-item expanded "><a href="/shiroa-page/content/DIP/chapters/2数字图像处理基础.html"><strong aria-hidden="true">2.</strong> 数字图像处理基础</a></li><li class="chapter-item expanded "><a href="/shiroa-page/content/DIP/chapters/3空间域图像增强.html"><strong aria-hidden="true">3.</strong> 空间域图像增强</a></li><li class="chapter-item expanded "><a href="/shiroa-page/content/DIP/chapters/4频率域图像增强.html"><strong aria-hidden="true">4.</strong> 频率域图像增强</a></li><li class="chapter-item expanded "><a href="/shiroa-page/content/DIP/chapters/5图像复原.html" class="active"><strong aria-hidden="true">5.</strong> 图像复原</a></li><li class="chapter-item expanded "><a href="/shiroa-page/content/DIP/chapters/6多分辨率处理.html"><strong aria-hidden="true">6.</strong> 多分辨率处理</a></li><li class="chapter-item expanded "><a href="/shiroa-page/content/DIP/chapters/7图像压缩.html"><strong aria-hidden="true">7.</strong> 图像压缩</a></li><li class="chapter-item expanded "><a href="/shiroa-page/content/DIP/chapters/8形态学处理.html"><strong aria-hidden="true">8.</strong> 形态学处理</a></li><li class="chapter-item expanded "><a href="/shiroa-page/content/DIP/chapters/9图像分割.html"><strong aria-hidden="true">9.</strong> 图像分割</a></li><li class="chapter-item expanded "><a href="/shiroa-page/content/DIP/chapters/10特征提取和模式识别.html"><strong aria-hidden="true">10.</strong> 特征提取和模式识别</a></li><li class="chapter-item expanded affix "><li class="part-title">数据结构与算法 | DSA</li><li class="chapter-item expanded "><a href="/shiroa-page/content/DSA/chapters/1绪论.html"><strong aria-hidden="true">1.</strong> 绪论</a></li><li class="chapter-item expanded "><a href="/shiroa-page/content/DSA/chapters/2线性表.html"><strong aria-hidden="true">2.</strong> 线性表</a></li><li class="chapter-item expanded "><a href="/shiroa-page/content/DSA/chapters/3栈和队列.html"><strong aria-hidden="true">3.</strong> 栈和队列</a></li><li class="chapter-item expanded "><a href="/shiroa-page/content/DSA/chapters/4串.html"><strong aria-hidden="true">4.</strong> 串</a></li><li class="chapter-item expanded "><a href="/shiroa-page/content/DSA/chapters/5数组和广义表.html"><strong aria-hidden="true">5.</strong> 数组和广义表</a></li><li class="chapter-item expanded "><a href="/shiroa-page/content/DSA/chapters/6树和二叉树.html"><strong aria-hidden="true">6.</strong> 树和二叉树</a></li><li class="chapter-item expanded "><a href="/shiroa-page/content/DSA/chapters/7图.html"><strong aria-hidden="true">7.</strong> 图</a></li><li class="chapter-item expanded "><a href="/shiroa-page/content/DSA/chapters/8查找.html"><strong aria-hidden="true">8.</strong> 查找</a></li><li class="chapter-item expanded "><a href="/shiroa-page/content/DSA/chapters/9排序.html"><strong aria-hidden="true">9.</strong> 排序</a></li><li class="chapter-item expanded "><a href="/shiroa-page/content/DSA/chapters/10Exercise.html"><strong aria-hidden="true">10.</strong> Exercise</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="/shiroa-page/main.html">Hello, shiroa</a></li><li class="chapter-item expanded affix "><a href="/shiroa-page/24spring.html">2024 春季学期</a></li><li class="chapter-item expanded affix "><li class="part-title">数字图像处理 | DIP</li><li class="chapter-item expanded "><a href="/shiroa-page/DIP/chapters/1导论.html"><strong aria-hidden="true">1.</strong> 导论</a></li><li class="chapter-item expanded "><a href="/shiroa-page/DIP/chapters/2数字图像处理基础.html"><strong aria-hidden="true">2.</strong> 数字图像处理基础</a></li><li class="chapter-item expanded "><a href="/shiroa-page/DIP/chapters/3空间域图像增强.html"><strong aria-hidden="true">3.</strong> 空间域图像增强</a></li><li class="chapter-item expanded "><a href="/shiroa-page/DIP/chapters/4频率域图像增强.html"><strong aria-hidden="true">4.</strong> 频率域图像增强</a></li><li class="chapter-item expanded "><a href="/shiroa-page/DIP/chapters/5图像复原.html"><strong aria-hidden="true">5.</strong> 图像复原</a></li><li class="chapter-item expanded "><a href="/shiroa-page/DIP/chapters/6多分辨率处理.html"><strong aria-hidden="true">6.</strong> 多分辨率处理</a></li><li class="chapter-item expanded "><a href="/shiroa-page/DIP/chapters/7图像压缩.html"><strong aria-hidden="true">7.</strong> 图像压缩</a></li><li class="chapter-item expanded "><a href="/shiroa-page/DIP/chapters/8形态学处理.html"><strong aria-hidden="true">8.</strong> 形态学处理</a></li><li class="chapter-item expanded "><a href="/shiroa-page/DIP/chapters/9图像分割.html"><strong aria-hidden="true">9.</strong> 图像分割</a></li><li class="chapter-item expanded "><a href="/shiroa-page/DIP/chapters/10特征提取和模式识别.html"><strong aria-hidden="true">10.</strong> 特征提取和模式识别</a></li><li class="chapter-item expanded affix "><li class="part-title">数据结构与算法 | DSA</li><li class="chapter-item expanded "><a href="/shiroa-page/DSA/chapters/1绪论.html"><strong aria-hidden="true">1.</strong> 绪论</a></li><li class="chapter-item expanded "><a href="/shiroa-page/DSA/chapters/2线性表.html"><strong aria-hidden="true">2.</strong> 线性表</a></li><li class="chapter-item expanded "><a href="/shiroa-page/DSA/chapters/3栈和队列.html"><strong aria-hidden="true">3.</strong> 栈和队列</a></li><li class="chapter-item expanded "><a href="/shiroa-page/DSA/chapters/4串.html"><strong aria-hidden="true">4.</strong> 串</a></li><li class="chapter-item expanded "><a href="/shiroa-page/DSA/chapters/5数组和广义表.html"><strong aria-hidden="true">5.</strong> 数组和广义表</a></li><li class="chapter-item expanded "><a href="/shiroa-page/DSA/chapters/6树和二叉树.html"><strong aria-hidden="true">6.</strong> 树和二叉树</a></li><li class="chapter-item expanded "><a href="/shiroa-page/DSA/chapters/7图.html"><strong aria-hidden="true">7.</strong> 图</a></li><li class="chapter-item expanded "><a href="/shiroa-page/DSA/chapters/8查找.html"><strong aria-hidden="true">8.</strong> 查找</a></li><li class="chapter-item expanded "><a href="/shiroa-page/DSA/chapters/9排序.html" class="active"><strong aria-hidden="true">9.</strong> 排序</a></li><li class="chapter-item expanded "><a href="/shiroa-page/DSA/chapters/10Exercise.html"><strong aria-hidden="true">10.</strong> Exercise</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -239,7 +222,7 @@
                         <a href="https://github.com/hongjr03/shiroa-page" title="Git repository" aria-label="Git repository">
                             <i id="git-repository-button" class="fa fa-github"></i>
                         </a>
-                        <a href="https://github.com/hongjr03/shiroa-page/edit/main/content/DIP/chapters/5图像复原.typ" title="Suggest an edit" aria-label="Suggest an edit">
+                        <a href="https://github.com/hongjr03/shiroa-page/edit/main/DSA/chapters/9排序.typ" title="Suggest an edit" aria-label="Suggest an edit">
                             <i id="git-edit-button" class="fa fa-edit"></i>
                         </a>
 
@@ -261,7 +244,7 @@
                         <script>
     let appContainer = document.currentScript && document.currentScript.parentElement;
     window.typstRenderModuleReady.then((plugin) => {
-        window.typstBookRenderPage(plugin, "/shiroa-page/content/DIP/chapters/5图像复原", appContainer);
+        window.typstBookRenderPage(plugin, "/shiroa-page/DSA/chapters/9 排序", appContainer);
     });
 </script>
                     </main>
@@ -269,6 +252,23 @@
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
 
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+            </nav>
+
+        </div>
+
+        <script src="/shiroa-page/internal/svg_utils.js"></script>
+        <script src="/shiroa-page/theme/index.js"></script>
+
+    </div>
+</body>
+
+</html>
                         <div style="clear: both"></div>
                     </nav>
                 </div>
