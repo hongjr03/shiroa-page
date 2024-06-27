@@ -52,12 +52,12 @@
 
 数据元素存储位置的计算：<顺序表存储结构> $ "LOC"(a_i) = "LOC"(a_(i-1)) + C $
 
-$ "LOC"(a_i) = #pin(1)"LOC"(#pin(3)a_1)#pin(2) + (i-1)×C $
+$ "LOC"(a_i) = #pin(101)"LOC"(#pin(103)a_1)#pin(102) + (i-1)×C $
 
 其中，$C$ 为一个数据元素所占存储量。
 
-#pinit-highlight(1, 2)
-#pinit-point-from(3)[基地址]
+#pinit-highlight(101, 102)
+#pinit-point-from(103)[基地址]
 
 *特点*：
 1. 所有数据放在一个连续的地址空间
