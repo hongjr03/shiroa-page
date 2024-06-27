@@ -37,7 +37,7 @@
   ],
 )
 
-#build-meta(dest-dir: "dist")
+#build-meta(dest-dir: "docs")
 
 #get-book-meta()
 
