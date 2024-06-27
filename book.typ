@@ -10,8 +10,9 @@
   language: "zh",
   summary: [
     #prefix-chapter("main.typ")[Hello, shiroa]
-    = 2024 春季学期
-    == 数字图像处理 | DIP
+    - #chapter("content/24spring.typ", section: none)[2024 春季学期]
+    
+    = 数字图像处理 | DIP
     - #chapter("content/DIP/chapters/1导论.typ", section: "1")[导论]
     - #chapter("content/DIP/chapters/2数字图像处理基础.typ", section: "2")[数字图像处理基础]
     - #chapter("content/DIP/chapters/3空间域图像增强.typ", section: "3")[空间域图像增强]
@@ -23,7 +24,7 @@
     - #chapter("content/DIP/chapters/9图像分割.typ", section: "9")[图像分割]
     - #chapter("content/DIP/chapters/10特征提取和模式识别.typ", section: "10")[特征提取和模式识别]
 
-    == 数据结构与算法 | DSA
+    = 数据结构与算法 | DSA
     - #chapter("content/DSA/chapters/1绪论.typ", section: "1")[绪论]
     - #chapter("content/DSA/chapters/2线性表.typ", section: "2")[线性表]
     - #chapter("content/DSA/chapters/3栈和队列.typ", section: "3")[栈和队列]
