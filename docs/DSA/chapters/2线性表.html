@@ -16,14 +16,26 @@
 例 2-1：
 假设：有两个集合 A 和 B 分别用两个线性表 LA 和 LB 表示，即：线性表中的数据元素即为集合中的成员。现要求一个新的集合A＝A∪B。
 解：
+cpp1
 void union(SqList &amp;amp;La, SqList Lb) {
+
+2
     int La_len &#x3D; ListLength(La); // 求线性表的长度
+
+3
     int Lb_len &#x3D; ListLength(Lb);
+
+4
     for (int i &#x3D; 1; i &lt;&#x3D; Lb_len; i++) {
+
+5
         ElemType e;
+
+6
         GetElem(Lb, i, e); // 取出线性表中的第 i 个元素，赋给 e
-        if (!LocateElem(La, e)) {
-            // 在线性表中">
+
+7
+        if (!LocateElem(La, e))">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#ffffff" />
 

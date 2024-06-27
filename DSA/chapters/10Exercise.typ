@@ -220,6 +220,23 @@
   + 用文字写出实现上述过程的基本思想；
   + 写出算法。
 
+  ```c
+  int calculateBalanceFactors(TreeNode *node) {
+      if (node == NULL) {
+          return 0;
+      }
+      int leftHeight = calculateBalanceFactors(node->left);
+      int rightHeight = calculateBalanceFactors(node->right);
+      node->balanceFactor = leftHeight - rightHeight;
+      printf(
+              "Node value: %d, Balance Factor: %d\n",
+              node->val,
+              node->balanceFactor
+      );
+      return (leftHeight > rightHeight ? leftHeight : rightHeight) + 1;
+  }
+  ```
+
 18. 补充课后题 6.1、6.2、6.3、6.5、6.6、6.13、6.19、6.20、6.21、6.22、6.23、6.24、6.26、6.27、6.28、6.29。
 
 == 图

@@ -14,18 +14,38 @@
 算法描述
 冒泡排序是一种简单的排序算法。它重复地遍历要排序的列表，一次比较两个元素，如果它们的顺序错误就把它们交换过来。遍历列表的工作是重复地进行直到没有再需要交换，也就是说该列表已经排序完成。这个算法的名字由来是因为越小的元素会经由交换慢慢“浮”到数列的顶端。
 算法实现
+c1
 void BubbleSort(Elem R[], int n) {
+
+2
     i &#x3D; n;
+
+3
     while (i &gt; 1) {
+
+4
         lastExchangeIndex &#x3D; 1;
+
+5
         for (j &#x3D; 1; j &lt; i; j++)
+
+6
             if (R[j + 1].key &lt; R[j].key) {
+
+7
                 Swap(R[j], R[j + 1]);
+
+8
                 lastExchangeIndex &#x3D; j;// 记下进行交换的记录位置
+
+9
             }// if
+
+10
         i &#x3D; lastExchangeIndex;// 本趟进行过交换的
-                              // 最后一个记录的位置
-">
+
+11
+        ">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#ffffff" />
 

@@ -14,19 +14,38 @@
 ASL&#x3D;∑𝑛𝑖&#x3D;1𝑝𝑖×𝑐𝑖静态查找表
 先把需要比较的值复制为监视哨，放在数组的第一个位置。
 若有序，使用折半查找。
+C1
 int Search_Bin(SSTable ST, KeyType key) {
+
+2
     //在有序表ST中折半查找其关键字等于key的数据元素。
+
+3
     //若找到，则函数值为该元素在表中的位置，否则为0。
+
+4
     low &#x3D; 1;
+
+5
     high &#x3D; ST.length;// 置区间初值
+
+6
     while (low &lt;&#x3D; high) {
+
+7
         mid &#x3D; (low + high) / 2;
+
+8
         if （EQ (key , ST.elem[mid].key) )
+
+9
         return  mid;        // 找到待查元素
+
+10
         else if (LT(key, ST.elem[mid].key))
-            high &#x3D; mid - 1;// 继续在前半区间进行查找
-        else
-        ">
+
+11
+            high &#x3D; mid - 1;/">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#ffffff" />
 

@@ -82,7 +82,7 @@
     fill: main-color,
     lang: "zh",
     region: "cn",
-    weight: "light"
+    weight: "light",
   )
 
   // Set main spacing
@@ -125,19 +125,32 @@
   // code block setting
   show raw: it => {
     set text(font: code-font)
+
     if "block" in it.fields() and it.block {
-      rect(
-        width: 100%,
-        inset: (x: 4pt, y: 5pt),
-        radius: 4pt,
+      block(
         fill: code-extra-colors.bg,
-        [
-          #set text(fill: code-extra-colors.fg) if code-extra-colors.fg != none
-          #set par(justify: false)
-          // #place(right, text(luma(110), it.lang))
-          #it
-        ],
-      )
+        inset: 10pt,
+        radius: 4pt,
+        width: 100%,
+      )[
+        #set text(fill: code-extra-colors.fg) if code-extra-colors.fg != none
+        #set par(justify: false)
+        #place(top + right, text(luma(110), style: "italic", it.lang))
+        #grid(
+          columns: (1em, 1fr),
+          align: (
+            right,
+            left,
+          ),
+          column-gutter: 0.7em,
+          row-gutter: 0.6em,
+          ..it.lines.enumerate().map((
+            (i, line),
+          ) => (
+            text(gray)[#(i + 1)],
+            line,
+          )).flatten())
+      ]
     } else {
       it
     }
