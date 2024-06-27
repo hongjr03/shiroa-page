@@ -142,12 +142,15 @@
       edge-stroke: 1pt,
       edge-corner-radius: 5pt,
       mark-scale: 70%,
-      blob((-2, 0), "80"),
+      blob((0, -1), "43"),
+      edge(bend: -30deg),
+      edge("drr", bend: 30deg),
+      blob((-2, 0), "20"),
       edge(bend: -30deg),
       blob((-3, 1), "16"),
       edge((-2, 0), (-1, 1), bend: 30deg),
       blob((-1, 1), "35, 41"),
-      blob((2, 0), "60, 70"),
+      blob((2, 0), "50, 60"),
       edge(bend: -30deg),
       blob((1, 1), "48"),
       edge((2, 0), (2, 1), bend: 30deg),
@@ -156,7 +159,6 @@
       blob((3, 1), "66, 88"),
     ),
   )
-  【图有错】
 
 3. 对某二叉树进行前序遍历的结果为 abdefc，中序遍历的结果为 dbfeac，则后序遍历的结果为 #underline[~~~~~~~~~~~~~~~~~~~~~~~~~] 。
 
