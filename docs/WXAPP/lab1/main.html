@@ -1,0 +1,273 @@
+<!DOCTYPE HTML>
+<html lang="zh" class="sidebar-visible no-js light">
+
+<head>
+    <!-- Book generated using mdBook -->
+    <meta charset="UTF-8">
+    <title>shiroa-page</title>
+
+
+    <!-- Custom HTML head -->
+    
+    <meta name="description" content="移动软件开发 | 实验 1：第一个微信小程序
+洪佳荣 22070001035高峰老师，2024夏季 | 截止时间：2024年8月19日
+源代码：https://github.com/hongjr03/MiniProgram博客：https://www.jrhim.com/p/2024a/mnp1
+一、实验目的
+1.
+学习使用快速启动模板创建小程序的方法；
+2.
+学习不使用模板手动创建小程序的方法。
+二、实验步骤
+开发前准备
+按照要求，配置好小程序信息和开发环境。
+这里使用最新的稳定版微信开发者工具，版本号为1.06.2407110。
+使用快速启动模板创建小程序
+打开微信开发者工具，选择小程序项目，此时可以选择项目的目录、指定项目名称、AppID、项目描述等信息。
+将一系列信息填写完毕后，开发者工具会默认选择一个模板，点击创建即可。
+1 / 6
+洪佳荣 | 实验 1：第一个微信小程序
+和实验说明中一致，页面的左侧显示的是手机预览效果图，右侧类似于浏览器的开发者工具，可以查看页面的各种信息。可以通过鼠标模拟手机的触摸操作来查看页面的效果。
+点击顶部菜单的真机调试，开发者工具会自动编译对应真机系统平台的小程序代码，">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#ffffff" />
+
+    <link rel="stylesheet" href="/shiroa-page/theme/css/variables.css">
+    <link rel="stylesheet" href="/shiroa-page/theme/css/general.css">
+    <link rel="stylesheet" href="/shiroa-page/theme/css/chrome.css">
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="/shiroa-page/theme/FontAwesome/css/font-awesome.css">
+
+    <!-- Custom theme stylesheets -->
+
+    <style>
+        .typst-app { position: relative; }
+    </style>
+    <script>
+        /// https://segmentfault.com/a/1190000016574288
+        (function () {
+            var ie = !!(window.attachEvent && !window.opera);
+            var wk = /webkit\/(\d+)/i.test(navigator.userAgent) && RegExp.$1 < 525;
+            var fn = [];
+            var run = function () {
+                for (var i = 0; i < fn.length; i++) fn[i]();
+            };
+            var d = document;
+            d.ready = function (f) {
+                if (!ie && !wk && d.addEventListener) return d.addEventListener('DOMContentLoaded', f, false);
+                if (fn.push(f) > 1) return;
+                if (ie)
+                    (function () {
+                        try {
+                            d.documentElement.doScroll('left');
+                            run();
+                        } catch (err) {
+                            setTimeout(arguments.callee, 0);
+                        }
+                    })();
+                else if (wk)
+                    var t = setInterval(function () {
+                        if (/^(loaded|complete)$/.test(d.readyState)) clearInterval(t), run();
+                    }, 0);
+            };
+        })();
+
+        window.captureStack = function() { }
+    </script>
+
+    <script id="shiroa-js" type="module" src="/shiroa-page/internal/shiroa.js"></script>
+    <script>
+        window.typstRerender = () => { };
+        window.typstChangeTheme = () => { };
+
+        var typstBookJsLoaded = new Promise((resolve, reject) => {
+            document.getElementById('shiroa-js').addEventListener('load', resolve);
+            document.getElementById('shiroa-js').addEventListener('error', reject);
+        });
+
+        var rendererWasmModule = fetch('/shiroa-page/internal/typst_ts_renderer_bg.wasm');
+        window.typstRenderModuleReady = typstBookJsLoaded.then(() => {
+            var typstRenderModule = window.typstRenderModule =
+                window.TypstRenderModule.createTypstRenderer();
+            return typstRenderModule
+                .init({
+                    getModule: () => rendererWasmModule,
+                }).then(() => typstRenderModule);
+        }).catch((err) => {
+            console.error('shiroa.js failed to load', err);
+        });
+    </script>
+
+</head>
+
+<body>
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "/shiroa-page/";
+            window.typstPathToRoot = path_to_root;
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "ayu" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            // reserved util next major release
+            try {
+                localStorage.removeItem('mdbook-theme');
+                localStorage.removeItem('mdbook-sidebar');
+            } catch (e) { }
+            try {
+                var theme = localStorage.getItem('shiroa-theme');
+                var sidebar = localStorage.getItem('shiroa-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('shiroa-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('shiroa-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            window.getTypstTheme = function getTypstTheme() {
+                var _theme;
+                try { _theme = localStorage.getItem('shiroa-theme'); } catch (e) { }
+                if (_theme === null || _theme === undefined) { _theme = default_theme; }
+                window.typstBookTheme = _theme;
+                return _theme;
+            }
+            window.isTypstLightTheme = function isLightTheme(theme) {
+                return theme === 'light' || theme === 'rust';
+            }
+            var theme = getTypstTheme();
+            // todo: consistent theme between html and typst
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = null;
+            if (document.body.clientWidth >= 800) {
+                try { sidebar = localStorage.getItem('shiroa-sidebar'); } catch (e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="/shiroa-page/main.html">Hello, shiroa</a></li><li class="chapter-item expanded affix "><a href="/shiroa-page/24spring.html">2024 春季学期</a></li><li class="chapter-item expanded affix "><li class="part-title">数字图像处理 | DIP</li><li class="chapter-item expanded "><a href="/shiroa-page/DIP/chapters/1导论.html"><strong aria-hidden="true">1.</strong> 导论</a></li><li class="chapter-item expanded "><a href="/shiroa-page/DIP/chapters/2数字图像处理基础.html"><strong aria-hidden="true">2.</strong> 数字图像处理基础</a></li><li class="chapter-item expanded "><a href="/shiroa-page/DIP/chapters/3空间域图像增强.html"><strong aria-hidden="true">3.</strong> 空间域图像增强</a></li><li class="chapter-item expanded "><a href="/shiroa-page/DIP/chapters/4频率域图像增强.html"><strong aria-hidden="true">4.</strong> 频率域图像增强</a></li><li class="chapter-item expanded "><a href="/shiroa-page/DIP/chapters/5图像复原.html"><strong aria-hidden="true">5.</strong> 图像复原</a></li><li class="chapter-item expanded "><a href="/shiroa-page/DIP/chapters/6多分辨率处理.html"><strong aria-hidden="true">6.</strong> 多分辨率处理</a></li><li class="chapter-item expanded "><a href="/shiroa-page/DIP/chapters/7图像压缩.html"><strong aria-hidden="true">7.</strong> 图像压缩</a></li><li class="chapter-item expanded "><a href="/shiroa-page/DIP/chapters/8形态学处理.html"><strong aria-hidden="true">8.</strong> 形态学处理</a></li><li class="chapter-item expanded "><a href="/shiroa-page/DIP/chapters/9图像分割.html"><strong aria-hidden="true">9.</strong> 图像分割</a></li><li class="chapter-item expanded "><a href="/shiroa-page/DIP/chapters/10特征提取和模式识别.html"><strong aria-hidden="true">10.</strong> 特征提取和模式识别</a></li><li class="chapter-item expanded affix "><li class="part-title">数据结构与算法 | DSA</li><li class="chapter-item expanded "><a href="/shiroa-page/DSA/chapters/1绪论.html"><strong aria-hidden="true">1.</strong> 绪论</a></li><li class="chapter-item expanded "><a href="/shiroa-page/DSA/chapters/2线性表.html"><strong aria-hidden="true">2.</strong> 线性表</a></li><li class="chapter-item expanded "><a href="/shiroa-page/DSA/chapters/3栈和队列.html"><strong aria-hidden="true">3.</strong> 栈和队列</a></li><li class="chapter-item expanded "><a href="/shiroa-page/DSA/chapters/4串.html"><strong aria-hidden="true">4.</strong> 串</a></li><li class="chapter-item expanded "><a href="/shiroa-page/DSA/chapters/5数组和广义表.html"><strong aria-hidden="true">5.</strong> 数组和广义表</a></li><li class="chapter-item expanded "><a href="/shiroa-page/DSA/chapters/6树和二叉树.html"><strong aria-hidden="true">6.</strong> 树和二叉树</a></li><li class="chapter-item expanded "><a href="/shiroa-page/DSA/chapters/7图.html"><strong aria-hidden="true">7.</strong> 图</a></li><li class="chapter-item expanded "><a href="/shiroa-page/DSA/chapters/8查找.html"><strong aria-hidden="true">8.</strong> 查找</a></li><li class="chapter-item expanded "><a href="/shiroa-page/DSA/chapters/9排序.html"><strong aria-hidden="true">9.</strong> 排序</a></li><li class="chapter-item expanded "><a href="/shiroa-page/DSA/chapters/10Exercise.html"><strong aria-hidden="true">10.</strong> Exercise</a></li><li class="chapter-item expanded affix "><li class="part-title">移动软件开发 | WXAPP</li><li class="chapter-item expanded "><a href="/shiroa-page/WXAPP/lab1/main.html" class="active"><strong aria-hidden="true">1.</strong> 实验 1：第一个微信小程序</a></li><li class="chapter-item expanded "><a href="/shiroa-page/WXAPP/lab2/main.html"><strong aria-hidden="true">2.</strong> 实验 2：天气查询小程序</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function (e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents"
+                            aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme"
+                            aria-label="Change theme" aria-haspopup="true" aria-expanded="false"
+                            aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                    </div>
+
+                    <h1 class="menu-title">shiroa-page</h1>
+
+                    <div class="right-buttons">
+                        <a href="https://github.com/hongjr03/shiroa-page" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                        <a href="https://github.com/hongjr03/shiroa-page/edit/main/WXAPP/lab1/main.typ" title="Suggest an edit" aria-label="Suggest an edit">
+                            <i id="git-edit-button" class="fa fa-edit"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function (link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <script>
+    let appContainer = document.currentScript && document.currentScript.parentElement;
+    window.typstRenderModuleReady.then((plugin) => {
+        window.typstBookRenderPage(plugin, "/shiroa-page/WXAPP/lab1/main", appContainer);
+    });
+</script>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+            </nav>
+
+        </div>
+
+        <script src="/shiroa-page/internal/svg_utils.js"></script>
+        <script src="/shiroa-page/theme/index.js"></script>
+
+    </div>
+</body>
+
+</html>
