@@ -35,6 +35,10 @@
     - #chapter("DSA/chapters/8查找.typ", section: "8")[查找]
     - #chapter("DSA/chapters/9排序.typ", section: "9")[排序]
     - #chapter("DSA/chapters/10Exercise.typ", section: "10")[Exercise]
+
+    = 移动软件开发 | WXAPP
+    - #chapter("WXAPP/lab1/main.typ", section: "1")[实验 1：第一个微信小程序]
+    - #chapter("WXAPP/lab2/main.typ", section: "2")[实验 2：天气查询小程序]
   ],
 )
 
